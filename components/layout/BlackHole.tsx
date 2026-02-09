@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function BlackHole() {
+const BlackHole = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Outer gravitational distortion rings */}
@@ -190,3 +190,4 @@ export default function BlackHole() {
     </div>
   );
 }
+export default BlackHole

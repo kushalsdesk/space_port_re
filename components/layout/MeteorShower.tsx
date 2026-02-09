@@ -13,7 +13,7 @@ interface Meteor {
   delay: number;
 }
 
-export default function MeteorShower() {
+const MeteorShower = () => {
   const [meteors, setMeteors] = useState<Meteor[]>([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function MeteorShower() {
       const startY = Math.random() * 50;
       const angle = Math.random() * 45 + 30;
       const distance = Math.random() * 400 + 300;
-      
+
       return {
         id: i,
         startX,
@@ -79,3 +79,5 @@ export default function MeteorShower() {
     </svg>
   );
 }
+
+export default MeteorShower

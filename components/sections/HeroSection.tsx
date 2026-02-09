@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Rocket, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import BlackHole from "./BlackHole";
+import BlackHole from "@/components/layout/BlackHole";
 import { useNavigationStore } from "@/store/navigationStore";
 
-export default function HeroSection() {
+const HeroSection = () => {
   const [typedText, setTypedText] = useState("");
   const fullText = "Workspace Explorer & Developer";
   const setActiveSection = useNavigationStore((state) => state.setActiveSection);
@@ -28,7 +28,6 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center pt-20 pb-16">
-      {/* Blackhole positioned on top - only bottom half visible */}
       <div className="absolute inset-x-0 top-0 h-96 md:h-[500px] lg:h-[600px] flex justify-center items-start overflow-hidden pointer-events-none">
         <motion.div
           className="absolute sm:top-10"
@@ -40,10 +39,9 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Content overlay */}
       <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center">
-        <motion.h4
-          className="mb-2 pb-2 sm:mb-4 text-xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white/20 bg-clip-text leading-tight"
+        <motion.h1
+          className="mb-2 pb-2 sm:mb-4  text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white/20 bg-clip-text leading-tight"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -51,7 +49,7 @@ export default function HeroSection() {
           Welcome to My
           <br />
           <span className="text-sky-500/80">
-            Desk
+            Desk{" "}
             <motion.div
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 5, repeat: Infinity }}
@@ -60,7 +58,7 @@ export default function HeroSection() {
               Space
             </motion.div>
           </span>
-        </motion.h4>
+        </motion.h1>
 
         <motion.h3
           className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-teal-400/50"
@@ -97,7 +95,7 @@ export default function HeroSection() {
           <Button
             onClick={() => setActiveSection("journey")}
             variant="outline"
-            className="w-full sm:w-auto border-teal-400 bg-white  px-6 py-3 transition-colors duration-300"
+            className="w-full sm:w-auto border-teal-400 bg-teal-600/20 text-white  px-6 py-3 transition-colors duration-300"
           >
             <Star className="mr-2 h-4 w-4" />
             Explore Galaxy
@@ -107,3 +105,4 @@ export default function HeroSection() {
     </section>
   );
 }
+export default HeroSection

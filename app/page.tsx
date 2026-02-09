@@ -1,9 +1,9 @@
 "use client";
 
 import { useNavigationStore } from "@/store/navigationStore";
-import HeroSection from "@/components/HeroSection";
-import Navbar from "@/components/Navbar";
-import SpaceBackground from "@/components/SpaceBackground";
+import HeroSection from "@/components/sections/HeroSection";
+import Navbar from "@/components/layout/Navbar";
+import SpaceBackground from "@/components/layout/SpaceBackground";
 
 export default function Page() {
   const activeSection = useNavigationStore((state) => state.activeSection);

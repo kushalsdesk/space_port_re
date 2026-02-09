@@ -3,14 +3,14 @@
 import { motion } from "framer-motion";
 import MeteorShower from "./MeteorShower";
 
-export default function SpaceBackground() {
+const SpaceBackground = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
       {/* Solid black background */}
-      <div className="absolute inset-0 bg-slate-950" />
+      <div className="absolute inset-0 bg-black" />
 
       {/* Static blinking stars */}
-      {[...Array(200)].map((_, i) => (
+      {[...Array(50)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-0.5 h-0.5 bg-white rounded-full"
@@ -19,39 +19,34 @@ export default function SpaceBackground() {
             top: `${Math.random() * 100}%`,
           }}
           animate={{
-            opacity: [0.1, 0.7, 0.1],
-            scale: [0.5, 1.2, 0.5],
+            opacity: [0.1, 0.6, 0.1],
+            scale: [0.5, 1, 0.5],
           }}
           transition={{
             duration: Math.random() * 4 + 3,
-            repeat: Infinity,
+            repeat: Number.POSITIVE_INFINITY,
             delay: Math.random() * 2,
             ease: "easeInOut",
           }}
         />
       ))}
 
-      {/* Larger colored stars */}
-      {[...Array(40)].map((_, i) => (
+      {/* Larger twinkling stars */}
+      {[...Array(10)].map((_, i) => (
         <motion.div
           key={`large-${i}`}
-          className="absolute rounded-full"
+          className="absolute w-1 h-1 bg-blue-200 rounded-full"
           style={{
-            width: Math.random() * 2 + 1,
-            height: Math.random() * 2 + 1,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
-            backgroundColor: ["#60a5fa", "#a78bfa", "#06b6d4", "#fff"][
-              Math.floor(Math.random() * 4)
-            ],
           }}
           animate={{
-            opacity: [0.05, 0.5, 0.05],
-            scale: [0.3, 1.5, 0.3],
+            opacity: [0.05, 0.4, 0.05],
+            scale: [0.3, 1.2, 0.3],
           }}
           transition={{
             duration: Math.random() * 5 + 4,
-            repeat: Infinity,
+            repeat: Number.POSITIVE_INFINITY,
             delay: Math.random() * 3,
             ease: "easeInOut",
           }}
@@ -68,3 +63,4 @@ export default function SpaceBackground() {
     </div>
   );
 }
+export default SpaceBackground

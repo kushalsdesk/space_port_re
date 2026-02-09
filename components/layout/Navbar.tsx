@@ -13,7 +13,8 @@ const navItems: { name: string; id: Section; icon: string }[] = [
   { name: "Contact", id: "contact", icon: "/nav/email.svg" },
 ];
 
-export default function SpaceNavigation() {
+const SpaceNavigation = () => {
+
   const activeSection = useNavigationStore((state) => state.activeSection);
   const setActiveSection = useNavigationStore((state) => state.setActiveSection);
 
@@ -68,3 +69,4 @@ export default function SpaceNavigation() {
     </div>
   );
 }
+export default SpaceNavigation
