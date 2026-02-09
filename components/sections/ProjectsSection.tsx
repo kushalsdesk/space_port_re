@@ -90,7 +90,6 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
         }}
       >
         <CardContent className="p-6">
-          {/* Project Header */}
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
               <project.PlanetComponent size={48} />
@@ -120,12 +119,10 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             </motion.div>
           </div>
 
-          {/* Project Description */}
           <p className="text-slate-300 mb-4 leading-relaxed">
             {project.description}
           </p>
 
-          {/* Tech Stack */}
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tech.map((tech: string, techIndex: number) => (
               <motion.span
@@ -141,7 +138,6 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             ))}
           </div>
 
-          {/* Action Buttons */}
           <div className="flex gap-3">
             <Button
               size="sm"
@@ -211,7 +207,6 @@ export default function SpaceProjects() {
           </motion.p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={project.name} project={project} index={index} />

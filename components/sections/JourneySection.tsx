@@ -84,7 +84,6 @@ export default function SpaceJourney() {
 
   return (
     <section ref={sectionRef} id="journey" className="py-20 relative z-10">
-      {/* Single Background Nebula */}
 
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="mx-auto max-w-6xl text-center">
@@ -108,7 +107,6 @@ export default function SpaceJourney() {
         </div>
 
         <div className="relative mx-auto max-w-6xl">
-          {/* Journey items */}
           <div className="space-y-24 relative z-10">
             {journeyItems.map((item, index) => (
               <motion.div
@@ -119,9 +117,7 @@ export default function SpaceJourney() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
               >
-                {/* Universal Layout - Same for all screen sizes */}
                 <div className="flex flex-col items-center">
-                  {/* Top half of details */}
                   <motion.div
                     className="w-full text-center font-mono mb-6"
                     initial={{ opacity: 0, y: -20 }}
@@ -129,7 +125,6 @@ export default function SpaceJourney() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.2 }}
                   >
-                    {/* Status and planet info */}
                     <div className="flex items-center justify-center gap-2 mb-3">
                       <div
                         className="w-2 h-2 rounded-full animate-pulse"
@@ -153,7 +148,6 @@ export default function SpaceJourney() {
                     </p>
                   </motion.div>
 
-                  {/* Planet centered - Bigger on desktop */}
                   <motion.div
                     className="relative mb-6"
                     initial={{ scale: 0 }}
@@ -163,7 +157,6 @@ export default function SpaceJourney() {
                   >
                     <item.PlanetComponent className="md:w-44 md:h-44 lg:w-52 lg:h-52" />
 
-                    {/* Scanning rings - Responsive sizes */}
                     <motion.div
                       className="absolute inset-0 border-2 rounded-full"
                       style={{ borderColor: item.color + "40" }}
@@ -193,7 +186,6 @@ export default function SpaceJourney() {
                     />
                   </motion.div>
 
-                  {/* Bottom half of details */}
                   <motion.div
                     className="w-full text-center font-mono"
                     initial={{ opacity: 0, y: 20 }}
@@ -201,7 +193,6 @@ export default function SpaceJourney() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
                   >
-                    {/* Mission details */}
                     <div className="space-y-3">
                       <div className="text-cyan-400 text-sm md:text-base uppercase tracking-wider">
                         {item.year}
@@ -217,7 +208,6 @@ export default function SpaceJourney() {
                       </p>
                     </div>
 
-                    {/* Progress indicator */}
                     <div className="flex items-center justify-center gap-3 mt-6">
                       <div className="w-20 md:w-24 h-1 bg-gray-700 rounded-full overflow-hidden">
                         <motion.div

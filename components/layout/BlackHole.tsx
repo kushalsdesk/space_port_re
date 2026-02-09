@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 const BlackHole = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      {/* Outer gravitational distortion rings */}
       <motion.div
         className="absolute w-[90vmin] h-[90vmin] rounded-full border-2 border-purple-500/10"
         animate={{
@@ -33,7 +32,6 @@ const BlackHole = () => {
         }}
       />
 
-      {/* Accretion disk - outer layer */}
       <motion.div
         className="absolute w-[70vmin] h-[70vmin]"
         animate={{
@@ -70,7 +68,6 @@ const BlackHole = () => {
         </svg>
       </motion.div>
 
-      {/* Accretion disk - middle layer (faster rotation) */}
       <motion.div
         className="absolute w-[60vmin] h-[60vmin]"
         animate={{
@@ -103,7 +100,6 @@ const BlackHole = () => {
         </svg>
       </motion.div>
 
-      {/* Accretion disk - inner layer (fastest rotation) */}
       <motion.div
         className="absolute w-[50vmin] h-[50vmin]"
         animate={{
@@ -140,7 +136,6 @@ const BlackHole = () => {
         </svg>
       </motion.div>
 
-      {/* Black hole event horizon - pulsing body */}
       <motion.div
         className="absolute w-[35vmin] h-[35vmin] rounded-full"
         style={{
@@ -157,7 +152,6 @@ const BlackHole = () => {
         }}
       />
 
-      {/* Inner event horizon with warping effect */}
       <motion.div
         className="absolute w-[30vmin] h-[30vmin] rounded-full bg-black"
         style={{
@@ -174,7 +168,6 @@ const BlackHole = () => {
         }}
       />
 
-      {/* Gravitational lensing effect - subtle ring */}
       <motion.div
         className="absolute w-[38vmin] h-[38vmin] rounded-full border border-cyan-400/20"
         animate={{

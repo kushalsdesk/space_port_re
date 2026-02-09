@@ -6,10 +6,8 @@ import MeteorShower from "./MeteorShower";
 const SpaceBackground = () => {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      {/* Solid black background */}
       <div className="absolute inset-0 bg-black" />
 
-      {/* Static blinking stars */}
       {[...Array(50)].map((_, i) => (
         <motion.div
           key={i}
@@ -31,7 +29,6 @@ const SpaceBackground = () => {
         />
       ))}
 
-      {/* Larger twinkling stars */}
       {[...Array(10)].map((_, i) => (
         <motion.div
           key={`large-${i}`}
@@ -53,12 +50,10 @@ const SpaceBackground = () => {
         />
       ))}
 
-      {/* Nebula effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-purple-900/20 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-radial from-blue-900/15 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-radial from-purple-900/10 to-transparent rounded-full blur-3xl" />
 
-      {/* Meteor shower */}
       <MeteorShower />
     </div>
   );

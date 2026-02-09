@@ -1,167 +1,167 @@
-
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const skillCategories = [
+const techStack = [
   {
-    name: "Frontend",
-    color: "#60a5fa",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Zustand",
-      "React Tanstack Query",
-    ],
+    name: "TypeScript",
+    icon: "/skills/typescript.svg",
+    color: "#3178C6",
   },
   {
-    name: "Backend",
-    color: "#10b981",
-    skills: [
-      "Node.js",
-      "Express",
-      "NestJS",
-      "Golang",
-      "PostgreSQL",
-      "MongoDB",
-      "GraphQL",
-    ],
+    name: "Go",
+    icon: "/skills/golang.svg",
+    color: "#00ADD8",
+  },
+
+  {
+    name: "React",
+    icon: "/skills/react.svg",
+    color: "#61DAFB",
   },
   {
-    name: "Tools",
-    color: "#a855f7",
-    skills: ["Neovim", "Linux", "Git", "Postman", "Podman"],
+    name: "Next.js",
+    icon: "/skills/nextjs.svg",
+    color: "#FFFFFF",
   },
   {
-    name: "DevOps",
-    color: "#f97316",
-    skills: ["Docker", "AWS", "CI/CD", "Kubernetes", "Monitoring"],
+    name: "Zustand",
+    icon: "/skills/zustand.svg",
+    color: "#FFA500",
+  },
+  {
+    name: "Framer Motion",
+    icon: "/skills/framer.svg",
+    color: "#FF0055",
+  },
+
+  {
+    name: "Node.js",
+    icon: "/skills/node.svg",
+    color: "#339933",
+  },
+  {
+    name: "Express",
+    icon: "/skills/express.svg",
+    color: "#FFFFFF",
+  },
+  {
+    name: "NestJS",
+    icon: "/skills/nest.svg",
+    color: "#E0234E",
+  },
+
+  {
+    name: "GraphQL",
+    icon: "/skills/graphql.svg",
+    color: "#E10098",
+  },
+
+  {
+    name: "PostgreSQL",
+    icon: "/skills/postgresql.svg",
+    color: "#4169E1",
+  },
+  {
+    name: "MongoDB",
+    icon: "/skills/mongodb.svg",
+    color: "#47A248",
+  },
+  {
+    name: "Redis",
+    icon: "/skills/redis.svg",
+    color: "#DC382D",
+  },
+
+  {
+    name: "Docker",
+    icon: "/skills/docker.svg",
+    color: "#2496ED",
+  },
+  {
+    name: "Podman",
+    icon: "/skills/podman.svg",
+    color: "#892CA0",
+  },
+  {
+    name: "Git",
+    icon: "/skills/git.svg",
+    color: "#F05032",
+  },
+  {
+    name: "Linux",
+    icon: "/skills/linux.svg",
+    color: "#FCC624",
+  },
+  {
+    name: "Neovim",
+    icon: "/skills/neovim.svg",
+    color: "#57A143",
+  },
+  {
+    name: "Postman",
+    icon: "/skills/postman.svg",
+    color: "#FF6C37",
   },
 ];
 
-// Generate random positions for each skill
-const generateRandomPositions = (skillCount: number) => {
-  const positions: number[] = [];
-  const minDistance = 60; // Minimum distance between stars
-
-  for (let i = 0; i < skillCount; i++) {
-    let attempts = 0;
-    let position: number;
-
-    do {
-      position = {
-        x: Math.random() * 200 - 100, // -100 to 100
-        y: Math.random() * 160 - 80, // -80 to 80
-      };
-      attempts++;
-    } while (
-      attempts < 50 &&
-      positions.some(
-        (pos) =>
-          Math.sqrt(
-            Math.pow(pos.x - position.x, 2) + Math.pow(pos.y - position.y, 2),
-          ) < minDistance,
-      )
-    );
-
-    positions.push(position);
-  }
-
-  return positions;
-};
-
-function SkillCategory({ category, index }: { category: any; index: number }) {
-  // Generate random positions for this category's skills
-  const skillPositions = generateRandomPositions(category.skills.length);
-
+function TechIcon({ tech, index }: { tech: any; index: number }) {
   return (
     <motion.div
-      className="w-full"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      className="relative group flex flex-col items-center"
+      initial={{ opacity: 0, scale: 0 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.3, delay: index * 0.15 }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.04,
+        type: "spring",
+        stiffness: 120,
+      }}
     >
-      {/* Category Title */}
-      <motion.h3
-        className="text-xl md:text-2xl font-bold mb-8 text-center"
-        style={{ color: category.color }}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+      <motion.div
+        className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center"
+        whileHover={{ scale: 1.2 }}
+        transition={{ duration: 0.3 }}
       >
-        {category.name}
-      </motion.h3>
+        <motion.div
+          className="absolute inset-0 rounded-full blur-xl opacity-30 lg:opacity-30 lg:group-hover:opacity-70 transition-opacity duration-300"
+          style={{ backgroundColor: tech.color }}
+        />
 
-      {/* Skills Stars in Random Positions */}
-      <div className="relative w-full h-48 md:h-56 lg:h-64 flex items-center justify-center">
-        {category.skills.map((skill, skillIndex) => (
-          <motion.div
-            key={skill}
-            className="absolute flex flex-col items-center"
-            style={{
-              left: `calc(50% + ${skillPositions[skillIndex].x}px)`,
-              top: `calc(50% + ${skillPositions[skillIndex].y}px)`,
-              transform: "translate(-50%, -50%)",
-            }}
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: skillIndex * 0.15 }}
-          >
-            {/* Skill Name */}
-            <motion.div
-              className="text-xs sm:text-sm text-white bg-gray-900/80 backdrop-blur-sm border rounded-full px-3 py-1 whitespace-nowrap mb-2 font-medium"
-              style={{ borderColor: category.color + "40" }}
-              animate={{
-                opacity: [0.8, 1, 0.8],
-              }}
-              transition={{
-                duration: 3 + skillIndex * 0.2,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
-              {skill}
-            </motion.div>
+        <motion.div
+          className="absolute inset-0 rounded-full blur-2xl  opacity-0 lg:group-hover:opacity-50 transition-opacity duration-300"
+          style={{ backgroundColor: tech.color }}
+        />
 
-            {/* Star */}
-            <motion.div
-              className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full relative"
-              style={{ backgroundColor: category.color }}
-              animate={{
-                opacity: [0.6, 1, 0.6],
-                scale: [0.8, 1.3, 0.8],
-              }}
-              transition={{
-                duration: 2 + skillIndex * 0.3,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
-              {/* Star glow effect */}
-              <div
-                className="absolute inset-0 rounded-full blur-sm opacity-60"
-                style={{ backgroundColor: category.color }}
-              />
-            </motion.div>
-          </motion.div>
-        ))}
-      </div>
+        <Image
+          src={tech.icon}
+          alt={tech.name}
+          width={50}
+          height={50}
+          className="relative z-10 w-full h-full object-contain filter drop-shadow-md"
+        />
+      </motion.div>
+
+      <motion.div
+        className="mt-3 px-3 py-1.5 bg-gray-900/90 backdrop-blur-sm border rounded-full text-xs sm:text-sm font-medium whitespace-nowrap md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          borderColor: tech.color + "60",
+          color: tech.color,
+        }}
+      >
+        {tech.name}
+      </motion.div>
     </motion.div>
   );
 }
 
 export default function SpaceSkills() {
   return (
-    <section id="skills" className="py-20 relative z-10">
-
-      <div className="mx-auto container px-4 md:px-6 relative">
-        <div className="mx-auto max-w-6xl text-center mb-16">
+    <section id="skills" className="py-20 relative z-10 min-h-screen flex items-center overflow-hidden">
+      <div className="mx-auto container px-4 md:px-6 relative w-full">
+        <div className="mx-auto max-w-6xl text-center mb-12 sm:mb-16">
           <motion.h2
             className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent"
             initial={{ y: 50, opacity: 0 }}
@@ -169,7 +169,7 @@ export default function SpaceSkills() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Skill <span className="text-purple-400">Constellations</span>
+            Tech <span className="text-purple-400">Arsenal</span>
           </motion.h2>
 
           <motion.div
@@ -181,27 +181,100 @@ export default function SpaceSkills() {
           />
 
           <motion.p
-            className="text-lg text-slate-300 max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Explore my technical domains where each star represents a mastered
-            technology scattered across the cosmic skill set.
+            Navigate through my cosmic toolkit of technologies, flowing through
+            the digital void in a stellar formation.
           </motion.p>
         </div>
 
-        {/* Skill Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 max-w-6xl mx-auto">
-          {skillCategories.map((category, index) => (
-            <SkillCategory
-              key={category.name}
-              category={category}
-              index={index}
-            />
-          ))}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 gap-8 sm:gap-10 md:hidden">
+            {techStack.map((tech, index) => (
+              <TechIcon key={tech.name} tech={tech} index={index} />
+            ))}
+          </div>
+
+          <div className="hidden md:block relative">
+            <motion.div
+              className="flex justify-start gap-12 lg:gap-16 mb-12 lg:mb-16 ml-0"
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              {techStack.slice(0, 5).map((tech, index) => (
+                <TechIcon key={tech.name} tech={tech} index={index} />
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="flex justify-end gap-12 lg:gap-16 mb-12 lg:mb-16 mr-0"
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {techStack.slice(5, 10).map((tech, index) => (
+                <TechIcon key={tech.name} tech={tech} index={index + 5} />
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="flex justify-start gap-12 lg:gap-16 mb-12 lg:mb-16 ml-0"
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              {techStack.slice(10, 15).map((tech, index) => (
+                <TechIcon key={tech.name} tech={tech} index={index + 10} />
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="flex justify-center gap-12 lg:gap-16"
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              {techStack.slice(15).map((tech, index) => (
+                <TechIcon key={tech.name} tech={tech} index={index + 15} />
+              ))}
+            </motion.div>
+          </div>
         </div>
+
+        <motion.div
+          className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-blue-900/10 to-transparent rounded-full blur-3xl pointer-events-none"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/3 right-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-purple-900/10 to-transparent rounded-full blur-3xl pointer-events-none"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        />
       </div>
     </section>
   );

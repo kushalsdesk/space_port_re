@@ -17,7 +17,6 @@ const MeteorShower = () => {
   const [meteors, setMeteors] = useState<Meteor[]>([]);
 
   useEffect(() => {
-    // Generate random meteor streaks with start and end points
     const newMeteors = Array.from({ length: 6 }, (_, i) => {
       const startX = Math.random() * 100;
       const startY = Math.random() * 50;

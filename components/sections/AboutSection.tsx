@@ -39,7 +39,6 @@ export default function SpaceAbout() {
     <section id="about" className="py-12 sm:py-16 lg:py-20 relative z-10">
       <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
         <div className="mx-auto max-w-4xl text-center">
-          {/* User Profile with Astronaut */}
           <motion.div
             className="mb-4 sm:mb-6 flex justify-center"
             initial={{ scale: 0, rotate: -180 }}
@@ -48,9 +47,7 @@ export default function SpaceAbout() {
             transition={{ duration: 0.8 }}
           >
             <div className="relative">
-              {/* Simple 2D Circular Orbital System */}
               <div className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 flex items-center justify-center">
-                {/* Orbiting Planet with top-to-bottom depth effect */}
                 <motion.div
                   className="absolute inset-0"
                   animate={{ rotate: 360 }}
@@ -63,9 +60,7 @@ export default function SpaceAbout() {
                   <motion.div
                     className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     animate={{
-                      // Size: smallest at top, biggest at bottom
                       scale: [0.4, 0.7, 1.3, 0.7, 0.4],
-                      // Opacity: lowest at top, highest at bottom
                       opacity: [0.3, 0.6, 1, 0.6, 0.3],
                     }}
                     transition={{
@@ -84,7 +79,6 @@ export default function SpaceAbout() {
                   </motion.div>
                 </motion.div>
 
-                {/* Astronaut Bunny - Always in front */}
                 <div className="relative z-10">
                   <Image
                     src="images/astra.png"
@@ -96,7 +90,6 @@ export default function SpaceAbout() {
                 </div>
               </div>
 
-              {/* Name Tag */}
               <motion.div
                 className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 bg-gray-900/80 backdrop-blur-sm border border-blue-400/50 rounded-full px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm md:text-base text-blue-400 font-medium whitespace-nowrap z-30"
                 animate={{
@@ -145,7 +138,6 @@ export default function SpaceAbout() {
             are not just functional, but truly out of this world.
           </motion.p>
 
-          {/* Stats Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {aboutStats.map((stat, index) => (
               <motion.div

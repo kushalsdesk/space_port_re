@@ -4,7 +4,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Journey Section Planets
 export function JourneyPlanet1({
   size = 64,
   className = "",
@@ -145,7 +144,6 @@ export function JourneyPlanet5({
   );
 }
 
-// Projects Section Planets
 export function ProjectPlanet1({
   size = 48,
   className = "",
@@ -270,7 +268,6 @@ export function ProjectPlanet4({
   );
 }
 
-// Single Nebula Component for journey section only
 export function NebulaBackground({
   size = 200,
   className = "",
@@ -303,7 +300,6 @@ export function NebulaBackground({
   );
 }
 
-// New Comet Component for projects section
 export function Cosmos({
   size = 200,
   className = "",
@@ -367,7 +363,6 @@ export function BlackHole({
     </motion.div>
   );
 }
-// New Comet Component for projects section
 export function CometTrail({
   size = 120,
   className = "",
