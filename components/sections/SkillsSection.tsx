@@ -10,10 +10,34 @@ const techStack = [
     color: "#3178C6",
   },
   {
+    name: "Node.js",
+    icon: "/skills/node.svg",
+    color: "#339933",
+  },
+  {
     name: "Go",
     icon: "/skills/golang.svg",
     color: "#00ADD8",
   },
+
+
+  {
+    name: "Express",
+    icon: "/skills/express.svg",
+    color: "#FFFFFF",
+  },
+  {
+    name: "NestJS",
+    icon: "/skills/nest.svg",
+    color: "#E0234E",
+  },
+
+  {
+    name: "GraphQL",
+    icon: "/skills/graphql.svg",
+    color: "#E10098",
+  },
+
 
   {
     name: "React",
@@ -34,28 +58,6 @@ const techStack = [
     name: "Framer Motion",
     icon: "/skills/framer.svg",
     color: "#FF0055",
-  },
-
-  {
-    name: "Node.js",
-    icon: "/skills/node.svg",
-    color: "#339933",
-  },
-  {
-    name: "Express",
-    icon: "/skills/express.svg",
-    color: "#FFFFFF",
-  },
-  {
-    name: "NestJS",
-    icon: "/skills/nest.svg",
-    color: "#E0234E",
-  },
-
-  {
-    name: "GraphQL",
-    icon: "/skills/graphql.svg",
-    color: "#E10098",
   },
 
   {
@@ -121,7 +123,7 @@ function TechIcon({ tech, index }: { tech: any; index: number }) {
       }}
     >
       <motion.div
-        className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center"
+        className="relative w-9 h-9 md:w-16 md:h-16 flex items-center justify-center"
         whileHover={{ scale: 1.2 }}
         transition={{ duration: 0.3 }}
       >
@@ -138,8 +140,8 @@ function TechIcon({ tech, index }: { tech: any; index: number }) {
         <Image
           src={tech.icon}
           alt={tech.name}
-          width={50}
-          height={50}
+          width={30}
+          height={30}
           className="relative z-10 w-full h-full object-contain filter drop-shadow-md"
         />
       </motion.div>

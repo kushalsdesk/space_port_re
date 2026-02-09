@@ -22,7 +22,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />,
-    url: "https://linkedin.com/in/kushal",
+    url: "https://www.linkedin.com/in/kushal-mondal-dev/",
     color: "from-blue-400 to-blue-600",
     description: "Connect professionally",
   },
@@ -36,21 +36,21 @@ const socialLinks = [
   {
     name: "WhatsApp",
     icon: <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />,
-    url: "https://wa.me/1234567890",
+    url: "https://wa.me/9609085874",
     color: "from-green-400 to-green-600",
     description: "Chat on WhatsApp",
   },
   {
     name: "Email",
     icon: <Mail className="h-4 w-4 sm:h-5 sm:w-5" />,
-    url: "mailto:kushal@example.com",
+    url: "mailto:kushalmondal.dev@outlook.com",
     color: "from-orange-400 to-orange-600",
     description: "Send a direct message",
   },
   {
     name: "Discord",
     icon: <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />,
-    url: "https://discord.com/users/kushal",
+    url: "https://discord.com/users/Lone_Impala",
     color: "from-purple-400 to-purple-600",
     description: "Chat on Discord",
   },
