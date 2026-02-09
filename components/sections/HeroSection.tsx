@@ -48,7 +48,7 @@ const HeroSection = () => {
         >
           Welcome to My
           <br />
-          <span className="text-sky-500/80">
+          <span className="">
             Desk{" "}
             <motion.div
               animate={{ opacity: [0, 1, 0] }}

@@ -4,6 +4,11 @@ import { useNavigationStore } from "@/store/navigationStore";
 import HeroSection from "@/components/sections/HeroSection";
 import Navbar from "@/components/layout/Navbar";
 import SpaceBackground from "@/components/layout/SpaceBackground";
+import AboutSection from "@/components/sections/AboutSection";
+import JourneySection from "@/components/sections/JourneySection";
+import SkillsSection from "@/components/sections/SkillsSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import ContactsSection from "@/components/sections/ContactsSection";
 
 export default function Page() {
   const activeSection = useNavigationStore((state) => state.activeSection);
@@ -15,54 +20,18 @@ export default function Page() {
 
       {/* Content */}
       <div className="relative z-10">
-        {/* Hero Section */}
         {activeSection === "hero" && <HeroSection />}
 
-        {/* Placeholder sections for other views */}
-        {activeSection === "about" && (
-          <section className="min-h-screen flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <h1 className="text-5xl font-bold text-white/80">About</h1>
-              <p className="text-xl text-slate-400">Coming Soon...</p>
-            </div>
-          </section>
-        )}
+        {activeSection === "about" && <AboutSection />}
 
-        {activeSection === "journey" && (
-          <section className="min-h-screen flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <h1 className="text-5xl font-bold text-white/80">Journey</h1>
-              <p className="text-xl text-slate-400">Coming Soon...</p>
-            </div>
-          </section>
-        )}
+        {activeSection === "journey" && <JourneySection />}
 
-        {activeSection === "skills" && (
-          <section className="min-h-screen flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <h1 className="text-5xl font-bold text-white/80">Skills</h1>
-              <p className="text-xl text-slate-400">Coming Soon...</p>
-            </div>
-          </section>
-        )}
+        {activeSection === "skills" && <SkillsSection />}
 
-        {activeSection === "projects" && (
-          <section className="min-h-screen flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <h1 className="text-5xl font-bold text-white/80">Projects</h1>
-              <p className="text-xl text-slate-400">Coming Soon...</p>
-            </div>
-          </section>
-        )}
+        {activeSection === "projects" && <ProjectsSection />}
 
-        {activeSection === "contact" && (
-          <section className="min-h-screen flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <h1 className="text-5xl font-bold text-white/80">Contact</h1>
-              <p className="text-xl text-slate-400">Coming Soon...</p>
-            </div>
-          </section>
-        )}
+        {activeSection === "contact" && <ContactsSection />}
+
       </div>
 
       {/* Navigation Bar */}
