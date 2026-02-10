@@ -203,7 +203,7 @@ export default function SpaceSkills() {
 
           <div className="hidden md:block relative">
             <motion.div
-              className="flex justify-start gap-12 lg:gap-16 mb-12 lg:mb-16 ml-0"
+              className="flex justify-start gap-12 lg:gap-16 mb-6 ml-0"
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -215,7 +215,7 @@ export default function SpaceSkills() {
             </motion.div>
 
             <motion.div
-              className="flex justify-end gap-12 lg:gap-16 mb-12 lg:mb-16 mr-0"
+              className="flex justify-end gap-12 lg:gap-16 mb-6 mr-0"
               initial={{ x: 100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -227,7 +227,7 @@ export default function SpaceSkills() {
             </motion.div>
 
             <motion.div
-              className="flex justify-start gap-12 lg:gap-16 mb-12 lg:mb-16 ml-0"
+              className="flex justify-start gap-12 lg:gap-16 mb-6 ml-0"
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
