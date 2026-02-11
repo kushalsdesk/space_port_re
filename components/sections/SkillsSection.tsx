@@ -148,7 +148,7 @@ function TechIcon({ tech, index }: { tech: any; index: number }) {
   );
 }
 
-export default function SpaceSkills() {
+const SkillsSection = () => {
   return (
     <section id="skills" className="py-20 relative z-10 min-h-screen flex items-center overflow-hidden">
       <div className="mx-auto container px-4 md:px-6 relative w-full">
@@ -159,9 +159,7 @@ export default function SpaceSkills() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
-            Tech Arsenal
-          </motion.h2>
+          />
 
           <motion.div
             className="mb-8 sm:mb-12 h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-teal-400/50 to-purple-400/50 mx-auto"
@@ -270,3 +268,4 @@ export default function SpaceSkills() {
     </section>
   );
 }
+export default SkillsSection

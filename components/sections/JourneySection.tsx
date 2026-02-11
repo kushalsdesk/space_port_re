@@ -284,7 +284,7 @@ function ExperienceView({ experience }: { experience: any }) {
   );
 }
 
-export default function SpaceJourney() {
+const JourneySection = () => {
   const activeJourneyExperience = useNavigationStore((state) => state.activeJourneyExperience);
   const setActiveJourneyExperience = useNavigationStore((state) => state.setActiveJourneyExperience);
 
@@ -301,9 +301,7 @@ export default function SpaceJourney() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
-            My Space Odyssey
-          </motion.h2>
+          />
 
           <motion.div
             className="mb-8 h-1 w-20 rounded-full bg-gradient-to-r from-teal-400/50 to-purple-400/50 mx-auto"
@@ -369,3 +367,4 @@ export default function SpaceJourney() {
     </section>
   );
 }
+export default JourneySection

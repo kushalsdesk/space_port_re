@@ -101,7 +101,7 @@ function SocialButton({ social, index }: { social: any; index: number }) {
   );
 }
 
-export default function SpaceContact() {
+const ContactSection = () => {
   return (
     <footer
       id="contact"
@@ -116,9 +116,7 @@ export default function SpaceContact() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
-            Establish Communication
-          </motion.h2>
+          />
 
           <motion.div
             className="mb-8 sm:mb-12 h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-teal-400/50 to-purple-400/50 mx-auto"
@@ -177,3 +175,4 @@ export default function SpaceContact() {
     </footer>
   );
 }
+export default ContactSection

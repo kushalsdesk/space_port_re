@@ -32,7 +32,7 @@ const aboutStats = [
   },
 ];
 
-export default function SpaceAbout() {
+const AboutSection = () => {
   return (
     <section id="about" className="py-16 md:py-12 relative z-10">
       <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
@@ -67,7 +67,7 @@ export default function SpaceAbout() {
                       ease: "easeInOut",
                     }}
                     style={{
-                      zIndex: 20, // Always behind bunny for clean effect
+                      zIndex: 20,
                     }}
                   >
                     <JourneyPlanet1
@@ -172,3 +172,4 @@ export default function SpaceAbout() {
     </section>
   );
 }
+export default AboutSection
