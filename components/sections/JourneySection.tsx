@@ -81,7 +81,7 @@ function InfoIsland({
 }) {
   return (
     <motion.div
-      className="backdrop-blur-md rounded-lg p-4  relative"
+      className="backdrop-blur-md w-full rounded-lg p-4  relative"
       style={{
         backgroundColor: `${color}15`,
         borderColor: `${color}60`,
@@ -105,7 +105,7 @@ function ExperienceView({ experience }: { experience: any }) {
     <AnimatePresence mode="wait">
       <motion.div
         key={experience.id}
-        className="min-h-[70vh] flex items-center justify-center py-8 relative"
+        className="w-full min-h-[70vh] flex items-center justify-center py-8 relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -326,8 +326,8 @@ export default function SpaceJourney() {
                 className={`
                   relative px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300
                   ${activeJourneyExperience === journey.id
-                    ? 'text-white border-2 scale-105'
-                    : 'text-slate-400 border border-gray-700/50 hover:text-white'
+                    ? ' border-2 scale-105'
+                    : ' border border-gray-700/50 '
                   }
                 `}
                 style={{
@@ -354,7 +354,7 @@ export default function SpaceJourney() {
                   }
                 }}
               >
-                <span className="text-sm sm:text-base">{journey.year}</span>
+                <span className="text-sm text-white sm:text-base">{journey.year}</span>
               </Button>
             ))}
           </motion.div>
