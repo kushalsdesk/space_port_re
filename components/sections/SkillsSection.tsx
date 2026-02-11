@@ -19,8 +19,6 @@ const techStack = [
     icon: "/skills/golang.svg",
     color: "#00ADD8",
   },
-
-
   {
     name: "Express",
     icon: "/skills/express.svg",
@@ -31,35 +29,6 @@ const techStack = [
     icon: "/skills/nest.svg",
     color: "#E0234E",
   },
-
-  {
-    name: "GraphQL",
-    icon: "/skills/graphql.svg",
-    color: "#E10098",
-  },
-
-
-  {
-    name: "React",
-    icon: "/skills/react.svg",
-    color: "#61DAFB",
-  },
-  {
-    name: "Next.js",
-    icon: "/skills/nextjs.svg",
-    color: "#FFFFFF",
-  },
-  {
-    name: "Zustand",
-    icon: "/skills/zustand.svg",
-    color: "#FFA500",
-  },
-  {
-    name: "Framer Motion",
-    icon: "/skills/framer.svg",
-    color: "#FF0055",
-  },
-
   {
     name: "PostgreSQL",
     icon: "/skills/postgresql.svg",
@@ -80,6 +49,26 @@ const techStack = [
     name: "Docker",
     icon: "/skills/docker.svg",
     color: "#2496ED",
+  },
+  {
+    name: "GraphQL",
+    icon: "/skills/graphql.svg",
+    color: "#E10098",
+  },
+  {
+    name: "Next.js",
+    icon: "/skills/nextjs.svg",
+    color: "#FFFFFF",
+  },
+  {
+    name: "Zustand",
+    icon: "/skills/zustand.svg",
+    color: "#FFA500",
+  },
+  {
+    name: "Framer Motion",
+    icon: "/skills/framer.svg",
+    color: "#FF0055",
   },
   {
     name: "Podman",
@@ -165,17 +154,17 @@ export default function SpaceSkills() {
       <div className="mx-auto container px-4 md:px-6 relative w-full">
         <div className="mx-auto max-w-6xl text-center mb-12 sm:mb-16">
           <motion.h2
-            className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent"
+            className="mb-3 sm:mb-4  text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-400/50 to-teal-400/50 bg-clip-text text-transparent"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Tech <span className="text-purple-400">Arsenal</span>
+            Tech Arsenal
           </motion.h2>
 
           <motion.div
-            className="mb-8 h-1 w-20 rounded-full bg-gradient-to-r from-blue-400 to-teal-400 mx-auto"
+            className="mb-8 sm:mb-12 h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-teal-400/50 to-purple-400/50 mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
             viewport={{ once: true }}

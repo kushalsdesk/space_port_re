@@ -111,17 +111,17 @@ export default function SpaceContact() {
       <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
         <div className="mx-auto max-w-4xl text-center mb-8 sm:mb-12 lg:mb-16">
           <motion.h2
-            className="mb-3 sm:mb-4 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent"
+            className="mb-3 sm:mb-4  text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-400/50 to-teal-400/50 bg-clip-text text-transparent"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Establish <span className="text-purple-400">Communication</span>
+            Establish Communication
           </motion.h2>
 
           <motion.div
-            className="mb-6 sm:mb-8 h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-blue-400 to-teal-400 mx-auto"
+            className="mb-8 sm:mb-12 h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-teal-400/50 to-purple-400/50 mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
             viewport={{ once: true }}

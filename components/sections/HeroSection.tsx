@@ -41,7 +41,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center">
         <motion.h1
-          className="mb-2 pb-2 sm:mb-4  text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white/20 bg-clip-text leading-tight"
+          className="mb-2 pb-2 sm:mb-4  text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white/30 bg-clip-text leading-tight"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -53,7 +53,7 @@ const HeroSection = () => {
             <motion.div
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 5, repeat: Infinity }}
-              className="inline-block text-purple-500/30"
+              className="inline-block text-purple-500/50"
             >
               Space
             </motion.div>
@@ -61,23 +61,24 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.h3
-          className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-teal-400/50"
+          className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-teal-500/30"
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <span>{typedText}</span>
-          <span className="animate-pulse ml-1 inline-block h-6 sm:h-8 w-0.5 sm:w-1 bg-teal-400/50" />
+          <span className="animate-pulse ml-1 inline-block h-6 sm:h-8 w-0.5 sm:w-1 bg-teal-500/50" />
         </motion.h3>
 
         <motion.p
-          className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed px-4"
+          className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed px-4"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          Embark on a journey through my cosmic portfolio. Discover projects
-          that reach for the stars and skills that span galaxies.
+          I build. I break. I rebuild.
+          The <span className="text-teal-400/50 ">Gravitational pull</span><br />  of curiosity keeps expanding my universe of builds.
+
         </motion.p>
 
         <motion.div
@@ -88,14 +89,14 @@ const HeroSection = () => {
         >
           <Button
             onClick={() => setActiveSection("projects")}
-            className="w-full sm:w-auto bg-gradient-to-r from-sky-600/60 to-black/20 backdrop-blur-md transition-colors duration-300 text-white px-6 py-3 group">
+            className="w-full sm:w-auto bg-gradient-to-r from-sky-600/60 to-black/20 backdrop-blur-md transition-colors duration-300 text-teal-300 px-6 py-3 group">
             <Rocket className="mr-2 h-4 w-4 group-hover:animate-bounce" />
             Launch Mission
           </Button>
           <Button
             onClick={() => setActiveSection("journey")}
             variant="outline"
-            className="w-full sm:w-auto border-teal-400 bg-teal-600/20 text-white  px-6 py-3 transition-colors duration-300"
+            className="w-full sm:w-auto border-teal-400 bg-teal-600/20 text-white/80  px-6 py-3 transition-colors duration-300"
           >
             <Star className="mr-2 h-4 w-4" />
             Explore Galaxy

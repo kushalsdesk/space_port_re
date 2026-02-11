@@ -1,6 +1,4 @@
-
 "use client";
-
 import { motion } from "framer-motion";
 import { Zap, Target, Heart, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -36,7 +34,7 @@ const aboutStats = [
 
 export default function SpaceAbout() {
   return (
-    <section id="about" className="py-12 sm:py-16 lg:py-20 relative z-10">
+    <section id="about" className="py-16 md:py-12 relative z-10">
       <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
@@ -91,7 +89,7 @@ export default function SpaceAbout() {
               </div>
 
               <motion.div
-                className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 bg-gray-900/80 backdrop-blur-sm border border-blue-400/50 rounded-full px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm md:text-base text-blue-400 font-medium whitespace-nowrap z-30"
+                className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 bg-gray-900/80 backdrop-blur-sm border border-blue-400/50 rounded-md px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm md:text-base text-blue-400 font-medium whitespace-nowrap z-30"
                 animate={{
                   opacity: [0.8, 1, 0.8],
                 }}
@@ -107,7 +105,7 @@ export default function SpaceAbout() {
           </motion.div>
 
           <motion.h2
-            className="mb-3 sm:mb-4 mt-8 sm:mt-12 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent"
+            className="mb-3 sm:mb-4 mt-8 sm:mt-12 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-400/50 to-teal-400/50 bg-clip-text text-transparent"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -117,7 +115,7 @@ export default function SpaceAbout() {
           </motion.h2>
 
           <motion.div
-            className="mb-8 sm:mb-12 h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-blue-400 to-teal-400 mx-auto"
+            className="mb-8 sm:mb-12 h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-teal-400/50 to-purple-400/50 mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
             viewport={{ once: true }}
@@ -131,11 +129,7 @@ export default function SpaceAbout() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            I'm a digital astronaut navigating the vast cosmos of code and
-            creativity. With a passion for exploring new technologies and
-            building stellar user experiences, I transform ideas into reality
-            across the digital universe. My mission: to create applications that
-            are not just functional, but truly out of this world.
+            Beside a little bit of Coding, Love Understandings of Computer Behaviours, Low Level Communications, Planned Deadlines and Caracals.
           </motion.p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
