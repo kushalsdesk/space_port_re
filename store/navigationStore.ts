@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
 export type Section = 'hero' | 'about' | 'journey' | 'skills' | 'projects' | 'contact';
-export type ProjectId = 'nebula' | 'quantum' | 'stellar' | 'cosmic';
+export type ProjectId = 'first' | 'second' | 'third' | 'fourth';
 export type JourneyExperience = 'current' | 'startup' | 'education';
 
 export interface NavigationState {
@@ -19,13 +19,13 @@ export const useNavigationStore = create<NavigationState>()(
     (set) => ({
       activeSection: 'hero',
       setActiveSection: (section: Section) => set({ activeSection: section }),
-      activeProject: 'nebula',
+      activeProject: 'first',
       setActiveProject: (project: ProjectId) => set({ activeProject: project }),
       activeJourneyExperience: 'current',
       setActiveJourneyExperience: (experience: JourneyExperience) => set({ activeJourneyExperience: experience }),
     }),
     {
-      name: 'current-state', storage: createJSONStorage(() => localStorage),
+      name: 'current-section', storage: createJSONStorage(() => localStorage),
     }
   )
 );
