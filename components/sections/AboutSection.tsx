@@ -3,8 +3,34 @@ import { motion } from "framer-motion";
 import { Zap, Target, Heart, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { JourneyPlanet1 } from "../layout/CustomPlanets";
 
+function JourneyPlanet1({
+  size = 64,
+  className = "",
+}: {
+  size?: number;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      className={`relative ${className}`}
+      style={{ width: size, height: size }}
+      transition={{
+        duration: 25,
+        repeat: Number.POSITIVE_INFINITY,
+        ease: "linear",
+      }}
+    >
+      <Image
+        src="/images/planet-purple.png"
+        alt="Purple Swirl Planet"
+        width={size}
+        height={size}
+        className="object-contain w-full h-full"
+      />
+    </motion.div>
+  );
+}
 const aboutStats = [
   {
     icon: <Zap className="h-5 w-5 sm:h-6 sm:w-6" />,

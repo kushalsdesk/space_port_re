@@ -1,57 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Twitter,
-  ExternalLink,
-  MessageCircle,
-} from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const socialLinks = [
   {
     name: "GitHub",
-    icon: <Github className="h-4 w-4 sm:h-5 sm:w-5" />,
+    icon: "/contacts/github.svg",
     url: "https://github.com/kushalsdesk",
-    color: "from-gray-400 to-gray-600",
     description: "Explore my code repositories",
   },
   {
     name: "LinkedIn",
-    icon: <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />,
+    icon: "/contacts/linkedin.svg",
     url: "https://www.linkedin.com/in/kushal-mondal-dev/",
-    color: "from-blue-400 to-blue-600",
     description: "Connect professionally",
   },
   {
-    name: "Twitter",
-    icon: <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />,
-    url: "https://twitter.com/kushal",
-    color: "from-sky-400 to-sky-600",
-    description: "Follow my tech journey",
+    name: "LeetCode",
+    icon: "/contacts/leetcode.svg",
+    url: "https://leetcode.com/u/caracaldev",
+    description: "View my coding solutions",
   },
   {
     name: "WhatsApp",
-    icon: <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />,
+    icon: "/contacts/whatsapp.svg",
     url: "https://wa.me/9609085874",
-    color: "from-green-400 to-green-600",
     description: "Chat on WhatsApp",
   },
   {
     name: "Email",
-    icon: <Mail className="h-4 w-4 sm:h-5 sm:w-5" />,
+    icon: "/contacts/mail.svg",
     url: "mailto:kushalmondal.dev@outlook.com",
-    color: "from-orange-400 to-orange-600",
     description: "Send a direct message",
   },
   {
     name: "Discord",
-    icon: <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />,
+    icon: "/contacts/discord.svg",
     url: "https://discord.com/users/Lone_Impala",
-    color: "from-purple-400 to-purple-600",
     description: "Chat on Discord",
   },
 ];
@@ -80,11 +68,17 @@ function SocialButton({ social, index }: { social: any; index: number }) {
       >
         <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 w-full">
           <motion.div
-            className={`p-2 sm:p-3 rounded-full bg-gradient-to-r ${social.color} flex items-center justify-center text-white flex-shrink-0`}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-800/50 flex items-center justify-center flex-shrink-0 group-hover:bg-gray-700/50 transition-colors"
             whileHover={{ scale: 1.1, rotate: 360 }}
             transition={{ duration: 0.3 }}
           >
-            {social.icon}
+            <Image
+              src={social.icon}
+              alt={social.name}
+              width={24}
+              height={24}
+              className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+            />
           </motion.div>
           <div className="flex-1 text-left min-w-0">
             <h3 className="font-semibold text-white group-hover:text-teal-400 transition-colors text-sm sm:text-base truncate">
@@ -107,17 +101,8 @@ const ContactSection = () => {
       id="contact"
       className="py-12 mb-10 sm:py-16 lg:py-20 relative z-10 border-t border-gray-800/50"
     >
-
       <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
         <div className="mx-auto max-w-4xl text-center mb-8 sm:mb-12 lg:mb-16">
-          <motion.h2
-            className="mb-3 sm:mb-4  text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-400/50 to-teal-400/50 bg-clip-text text-transparent"
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          />
-
           <motion.div
             className="mb-8 sm:mb-12 h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-teal-400/50 to-purple-400/50 mx-auto"
             initial={{ width: 0 }}
